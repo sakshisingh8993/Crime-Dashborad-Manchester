@@ -1,0 +1,336 @@
+TASK 3
+
+/* Create a New Database for Task 3*/
+Create database Child_Poverty_T3
+
+------------------------------------------------------------------------------------------------------
+
+/* Use command is used for specific database*/
+use Child_Poverty_T3
+------------------------------------------------------------------------------------------------------
+/* Creating a Schema for Task 3*/
+Create Schema T3
+
+go
+------------------------------------------------------------------------------------------------------
+/* Creating a Tables with schema */
+
+CREATE TABLE T3.[2017 - Outcomes](
+	[Crime_ID] [nvarchar](100) NOT NULL,
+	[Month] [datetime2](7) NOT NULL,
+	[Reported_by] [nvarchar](50) NOT NULL,
+	[Falls_within] [nvarchar](50) NOT NULL,
+	[Longitude] [float] NOT NULL,
+	[Latitude] [float] NOT NULL,
+	[Location] [nvarchar](50) NOT NULL,
+	[LSOA_code] [nvarchar](50) NOT NULL,
+	[LSOA_name] [nvarchar](50) NOT NULL,
+	[Outcome_type] [nvarchar](100) NOT NULL
+) ON [PRIMARY]
+GO
+---------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE [T3].[2017 - Street](
+	[Crime_ID] [nvarchar](100) NULL,
+	[Month] [datetime2](7) NOT NULL,
+	[Reported_by] [nvarchar](50) NOT NULL,
+	[Falls_within] [nvarchar](50) NOT NULL,
+	[Longitude] [float] NOT NULL,
+	[Latitude] [float] NOT NULL,
+	[Location] [nvarchar](50) NOT NULL,
+	[LSOA_code] [nvarchar](50) NOT NULL,
+	[LSOA_name] [nvarchar](50) NOT NULL,
+	[Outcome_type] [nvarchar](1) NULL
+) ON [PRIMARY]
+GO
+--------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE [T3].[2018 - Outcomes](
+	[Crime_ID] [nvarchar](100) NOT NULL,
+	[Month] [datetime2](7) NOT NULL,
+	[Reported_by] [nvarchar](50) NOT NULL,
+	[Falls_within] [nvarchar](50) NOT NULL,
+	[Longitude] [float] NOT NULL,
+	[Latitude] [float] NOT NULL,
+	[Location] [nvarchar](50) NOT NULL,
+	[LSOA_code] [nvarchar](50) NOT NULL,
+	[LSOA_name] [nvarchar](50) NOT NULL,
+	[Outcome_type] [nvarchar](100) NOT NULL
+) ON [PRIMARY]
+GO
+------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE [T3].[2018- Street](
+	[Crime_ID] [nvarchar](100) NULL,
+	[Month] [datetime2](7) NOT NULL,
+	[Reported_by] [nvarchar](50) NOT NULL,
+	[Falls_within] [nvarchar](50) NOT NULL,
+	[Longitude] [float] NOT NULL,
+	[Latitude] [float] NOT NULL,
+	[Location] [nvarchar](50) NOT NULL,
+	[LSOA_code] [nvarchar](50) NOT NULL,
+	[LSOA_name] [nvarchar](50) NOT NULL,
+	[Outcome_type] [nvarchar](1) NULL
+) ON [PRIMARY]
+GO
+----------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE [T3].[2017-2018_Stop-and-Search](
+	[Type] [nvarchar](255) NULL,
+	[Date] [datetime] NULL,
+	[Part of a policing operation] [bit] NOT NULL,
+	[Policing operation] [nvarchar](255) NULL,
+	[Latitude] [float] NULL,
+	[Longitude] [float] NULL,
+	[Gender] [nvarchar](255) NULL,
+	[Age range] [nvarchar](255) NULL,
+	[Self-defined ethnicity] [nvarchar](255) NULL,
+	[Officer-defined ethnicity] [nvarchar](255) NULL,
+	[Legislation] [nvarchar](255) NULL,
+	[Object of search] [nvarchar](255) NULL,
+	[Outcome] [nvarchar](255) NULL,
+	[Outcome linked to object of search] [nvarchar](255) NULL,
+	[Removal of more than just outer clothing] [bit] NOT NULL
+) ON [PRIMARY]
+GO
+
+------------------------------------------------------------------------------------------------------
+CREATE TABLE [T3].[LSOA_POPULATION](
+	[Area Codes] [nvarchar](255) NULL,
+	[LA (2019 boundaries)] [nvarchar](255) NULL,
+	[LSOA] [nvarchar](255) NULL,
+	[All Ages] [float] NULL,
+	[F5] [float] NULL,
+	[F6] [float] NULL,
+	[F7] [float] NULL,
+	[F8] [float] NULL,
+	[F9] [float] NULL,
+	[F10] [float] NULL,
+	[F11] [float] NULL,
+	[F12] [float] NULL,
+	[F13] [float] NULL,
+	[F14] [float] NULL,
+	[F15] [float] NULL,
+	[F16] [float] NULL,
+	[F17] [float] NULL,
+	[F18] [float] NULL,
+	[F19] [float] NULL,
+	[F20] [float] NULL,
+	[F21] [float] NULL,
+	[F22] [float] NULL,
+	[F23] [float] NULL,
+	[F24] [float] NULL,
+	[F25] [float] NULL,
+	[F26] [float] NULL,
+	[F27] [float] NULL,
+	[F28] [float] NULL,
+	[F29] [float] NULL,
+	[F30] [float] NULL,
+	[F31] [float] NULL,
+	[F32] [float] NULL,
+	[F33] [float] NULL,
+	[F34] [float] NULL,
+	[F35] [float] NULL,
+	[F36] [float] NULL,
+	[F37] [float] NULL,
+	[F38] [float] NULL,
+	[F39] [float] NULL,
+	[F40] [float] NULL,
+	[F41] [float] NULL,
+	[F42] [float] NULL,
+	[F43] [float] NULL,
+	[F44] [float] NULL,
+	[F45] [float] NULL,
+	[F46] [float] NULL,
+	[F47] [float] NULL,
+	[F48] [float] NULL,
+	[F49] [float] NULL,
+	[F50] [float] NULL,
+	[F51] [float] NULL,
+	[F52] [float] NULL,
+	[F53] [float] NULL,
+	[F54] [float] NULL,
+	[F55] [float] NULL,
+	[F56] [float] NULL,
+	[F57] [float] NULL,
+	[F58] [float] NULL,
+	[F59] [float] NULL,
+	[F60] [float] NULL,
+	[F61] [float] NULL,
+	[F62] [float] NULL,
+	[F63] [float] NULL,
+	[F64] [float] NULL,
+	[F65] [float] NULL,
+	[F66] [float] NULL,
+	[F67] [float] NULL,
+	[F68] [float] NULL,
+	[F69] [float] NULL,
+	[F70] [float] NULL,
+	[F71] [float] NULL,
+	[F72] [float] NULL,
+	[F73] [float] NULL,
+	[F74] [float] NULL,
+	[F75] [float] NULL,
+	[F76] [float] NULL,
+	[F77] [float] NULL,
+	[F78] [float] NULL,
+	[F79] [float] NULL,
+	[F80] [float] NULL,
+	[F81] [float] NULL,
+	[F82] [float] NULL,
+	[F83] [float] NULL,
+	[F84] [float] NULL,
+	[F85] [float] NULL,
+	[F86] [float] NULL,
+	[F87] [float] NULL,
+	[F88] [float] NULL,
+	[F89] [float] NULL,
+	[F90] [float] NULL,
+	[F91] [float] NULL,
+	[F92] [float] NULL,
+	[F93] [float] NULL,
+	[F94] [float] NULL,
+	[90+] [float] NULL
+) ON [PRIMARY]
+GO
+------------------------------------------------------------------------------------------------------
+/* Inserting a value from another dbo owner tables into T3 schema tables*/
+insert into T3.[2017 - Outcomes] select * from dbo.[2017 - Outcomes]
+insert into T3.[2017 - Street] select * from dbo.[2017 - Street]
+insert into T3.[2018 - Outcomes] select * from dbo.[2018 - Outcomes]
+insert into T3.[2018- Street] select * from dbo.[2018- Street]
+insert into T3.[2017-2018_Stop-and-Search] select * from dbo.[2017-2018_Stop-and-Search]
+insert into T3.[LSOA_POPULATION] select * from dbo.[Sheet1$]
+---------------------------------------------------------------------------------------------------------------------------
+/* Identify the tables data with select command */
+select * from T3.[2017 - Outcomes]
+select * from T3.[2017 - Street]
+select * from T3.[2018 - Outcomes]
+select * from T3.[2018- Street]
+select * from T3.[2017-2018_Stop-and-Search]
+select * from T3.LSOA_POPULATION 
+---------------------------------------------------------------------------------------------------------------------------
+/* Drop table of dbo table*/
+drop table dbo.Sheet1$
+drop table dbO.[2017 - Outcomes]
+drop table dbO.[2017 - Street]
+drop table dbO.[2018 - Outcomes]
+drop table dbO.[2018- Street]
+drop table dbO.[2017-2018_Stop-and-Search]
+---------------------------------------------------------------------------------------------------------------------------
+/* TOTAL NUMBER OF CASES REGISTER AS PER THE LSOA CODE OF MANCHESTER FROM YEAR 2017 TO 2018*/
+BEGIN TRY
+SELECT T3.[2017 - Outcomes].Location,T3.[2017 - Outcomes].LSOA_code, 
+COUNT(FORMAT (T3.[2017 - Outcomes].Month,'Y')) AS MONTH_2017,
+COUNT(FORMAT (T3.[2018 - Outcomes].Month,'Y')) AS MONTH_2018
+FROM T3.[2017 - Outcomes]
+FULL JOIN T3.[2018 - Outcomes]
+ON T3.[2017 - Outcomes].Crime_ID = T3.[2018 - Outcomes].Crime_ID
+WHERE T3.[2017 - Outcomes].LSOA_code IS NOT NULL 
+GROUP BY T3.[2017 - Outcomes].Location,T3.[2017 - Outcomes].LSOA_code
+HAVING COUNT(FORMAT (T3.[2018 - Outcomes].Month,'Y'))>0
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+/* THOSE CASES ARE NOT INCLUDED IN THE ABOVE QUERY WHICH DO NOT EXIST IN YEAR 2018*/
+----------------------------------------------------------------------------------------------------------------------------
+/* CRIME REPORT ON THE BASIS OF GENDER */
+BEGIN TRY
+SELECT GENDER, [Officer-defined ethnicity] AS ETHNICITY,
+COUNT([Object of search]) AS 'OBJECTIONS'
+from t3.[2017-2018_Stop-and-Search]
+WHERE GENDER IS NOT NULL
+GROUP BY GENDER, [Officer-defined ethnicity]
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+
+-------------------------------------------------------------------------------------------------------------------------
+
+/* REPORT ON THE BASIS LSOA CODE WHICH HAS BEEN REPORTED BY MANCHESTER POLICE IN YEAR 2018*/
+BEGIN TRY
+SELECT T3.[2017 - Outcomes].LSOA_code, 
+T3.[2017 - Outcomes].LSOA_name, Reported_by,
+[Object of search], Outcome 
+FROM T3.[2017-2018_Stop-and-Search] 
+FULL JOIN T3.[2017 - Outcomes] 
+ON T3.[2017 - Outcomes].Latitude = T3.[2017-2018_Stop-and-Search].Latitude
+WHERE TYPE IS NOT NULL 
+
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+
+---------------------------------------------------------------------------------------------------------------------------
+/* REPORT ON THE BASIS LSOA CODE WHICH HAS BEEN REPORTED BY MANCHESTER POLICE IN YEAR 2017*/
+BEGIN TRY
+SELECT T3.[2017 - Street].LSOA_code,Reported_by,[Object of search], 
+COUNT(Outcome) AS Outcomes
+FROM T3.[2017-2018_Stop-and-Search] 
+INNER JOIN T3.[2017 - Street] 
+ON T3.[2017 - Street].Latitude = T3.[2017-2018_Stop-and-Search].Latitude
+WHERE TYPE IS NOT NULL 
+GROUP BY T3.[2017 - Street].LSOA_code,Reported_by,[Object of search]
+
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+---------------------------------------------------------------------------------------------------------------------------
+/* REPORT ON THE BASIS LSOA CODE WHICH HAS BEEN REPORTED BY MANCHESTER POLICE IN YEAR 2018*/
+BEGIN TRY
+SELECT T3.[2018 - Outcomes].LSOA_code,Reported_by,[Object of search], Outcome FROM T3.[2017-2018_Stop-and-Search] 
+FULL JOIN T3.[2018 - Outcomes] ON T3.[2018 - Outcomes].Latitude = T3.[2017-2018_Stop-and-Search].Latitude
+WHERE TYPE IS NOT NULL 
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+
+---------------------------------------------------------------------------------------------------------------------------
+/* REPORT ON THE BASIS LSOA CODE WHICH HAS BEEN REPORTED BY MANCHESTER POLICE IN YEAR 2018*/
+BEGIN TRY
+SELECT T3.[2018- Street].LSOA_code,Reported_by,
+[Object of search], Outcome 
+FROM T3.[2017-2018_Stop-and-Search] 
+INNER JOIN T3.[2018- Street] 
+ON T3.[2018- Street].Latitude = T3.[2017-2018_Stop-and-Search].Latitude
+WHERE TYPE IS NOT NULL 
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+---------------------------------------------------------------------------------------------------------------------------
+/* CRIME REPORT ON THE BASIS OF GENDER AND POPULATION OF MANCHESTER AREA*/
+BEGIN TRY
+SELECT DISTINCT COUNTRY='United Kingdom',City='Manchester',
+T3.[2018- Street].Crime_ID, T3.[2018- Street].Latitude, 
+T3.[2018- Street].Longitude,
+T3.LSOA_POPULATION.[Area Codes],
+REPLACE(REPLACE(T3.[2017-2018_Stop-and-Search].[Age range],'over 34','34-90'),'under 10','05-10') AS AGE,
+T3.[2017-2018_Stop-and-Search].Gender AS GENDER
+FROM T3.[2018- Street]
+FULL JOIN T3.LSOA_POPULATION 
+ON T3.[2018- Street].LSOA_code = T3.LSOA_POPULATION.[Area Codes]
+FULL JOIN T3.[2017-2018_Stop-and-Search] 
+ON T3.[2018- Street].Latitude = T3.[2017-2018_Stop-and-Search].Latitude
+WHERE Crime_ID IS NOT NULL AND 
+T3.[2017-2018_Stop-and-Search].[Age range] IS NOT NULL AND 
+T3.[2017-2018_Stop-and-Search].Gender IS NOT NULL
+and T3.LSOA_POPULATION.[LA (2019 boundaries)]='Manchester'
+END TRY
+BEGIN CATCH
+PRINT'RESULT NOT FOUND'
+END CATCH
+
+
+---------------------------------------------------------------------------------------------------------------------------
+	
+
+
+
+
+
